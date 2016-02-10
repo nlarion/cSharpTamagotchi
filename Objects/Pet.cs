@@ -83,7 +83,6 @@ namespace Tamagotchi.Objects
     {
       return _pets[id-1];
     }
-
     public static void TimePass()
     {
       List<Pet> pets = Pet.GetAll();
@@ -92,6 +91,12 @@ namespace Tamagotchi.Objects
         int food = pet.GetFood();
         pet.SetFood(food - 10);
       }
+    }
+
+    public static void FeedPet(Pet pet)
+    {
+      int food = pet.GetFood();
+      pet.SetFood(food + 10);
     }
   }
 }

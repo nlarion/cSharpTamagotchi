@@ -33,6 +33,11 @@ namespace Tamagotchi
         Pet pet = Pet.Find(parameters.id);
         return View["/pet.cshtml", pet];
       };
+      Post["/pets/{id}"]= parameters =>{
+        Pet pet = Pet.Find(parameters.id);
+        Pet.FeedPet(pet);
+        return View["pet.cshtml", pet];
+      };
     }
   }
 }

@@ -12,5 +12,10 @@
       <li>Current Rest Level for @Model.GetName(): @Model.GetRest()</li>
     </ul>
     <a href="/">Add another たまごっち</a>
+    <br>
+    <form action="/pets/@Model.GetId()" method="post">
+      <button type="submit">Feed  @Model.GetName() tin cans</button>
+    </form>
+
   </body>
 </html>

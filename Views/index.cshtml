@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>This is a site where you can add Tamagotchi and play with them, WOW!</h1>
+    <body>
+      <h3>Add a new たまごっち:</h3>
+      <form action='/' method='post'>
+        <label for='new-pet'>Pet Name</label>
+        <input id='new-pet' name='new-pet' type='text'><br>
+        Create a new たまごっち <button type='submit'>押</button>
+      </form>
+
+    </body>
+    <h2>Check on Your たまごっち</h2>
+    <ul>
+      @foreach (var tamagotchi in Model)
+      {
+        <li><a href="/pets/@tamagotchi.GetId()">@tamagotchi.GetName()</a></li>
+        <ul>
+          <li>Status Alive: @tamagotchi.GetStatus()</li>
+        </ul>
+      }
+    </ul>
+    <form action="/time" method="post">
+      <button type="submit">Time goes by</button>
+    </form>
+  </body>
+</html>

@@ -33,22 +33,22 @@ namespace Tamagotchi
         Pet pet = Pet.Find(parameters.id);
         return View["/pet.cshtml", pet];
       };
-      Post["/pets/{id}/food"]= parameters =>{
+      Post["/pets/{id}/food"]= parameters => {
         Pet pet = Pet.Find(parameters.id);
-        Pet.FeedPet(pet);
+        pet.FeedPet();
         return View["pet.cshtml", pet];
       };
-      Post["/pets/{id}/attention"]= parameters =>{
+      Post["/pets/{id}/attention"]= parameters => {
         Pet pet = Pet.Find(parameters.id);
-        Pet.AttentionPet(pet);//increase attention
+        pet.AttentionPet();//increase attention
         return View["pet.cshtml", pet];
       };
-      Post["/pets/{id}/rest"]= parameters =>{
+      Post["/pets/{id}/rest"]= parameters => {
         Pet pet = Pet.Find(parameters.id);
-        Pet.RestPet(pet);//increase rest
+        pet.RestPet();//increase rest
         return View["pet.cshtml", pet];
       };
-      Post["/clear"]= _ =>{
+      Post["/clear"]= _ => {
         List<Pet> allPets = Pet.GetAll();
         Pet.ClearAll();
         return View["index.cshtml", allPets];

@@ -97,22 +97,19 @@ namespace Tamagotchi.Objects
       }
     }
 
-    public static void FeedPet(Pet pet)
+    public void FeedPet()
     {
-      int food = pet.GetFood();
-      pet.SetFood(food + 10);
+      SetFood(_food + 10);
     }
 
-    public static void AttentionPet(Pet pet)
+    public void AttentionPet()
     {
-      int attention = pet.GetAttention();
-      pet.SetAttention(attention + 10);
+      SetAttention(_attention + 10);
     }
 
-    public static void RestPet(Pet pet)
+    public void RestPet()
     {
-      int rest = pet.GetRest();
-      pet.SetRest(rest + 10);
+      SetRest(_rest + 10);
     }
 
     public static void ClearAll()

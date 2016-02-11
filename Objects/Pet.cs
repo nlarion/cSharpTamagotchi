@@ -90,6 +90,10 @@ namespace Tamagotchi.Objects
       {
         int food = pet.GetFood();
         pet.SetFood(food - 10);
+        int attention = pet.GetAttention();
+        pet.SetAttention(attention - 10);
+        int rest = pet.GetRest();
+        pet.SetRest(rest - 10);
       }
     }
 
@@ -97,6 +101,23 @@ namespace Tamagotchi.Objects
     {
       int food = pet.GetFood();
       pet.SetFood(food + 10);
+    }
+
+    public static void AttentionPet(Pet pet)
+    {
+      int attention = pet.GetAttention();
+      pet.SetAttention(attention + 10);
+    }
+
+    public static void RestPet(Pet pet)
+    {
+      int rest = pet.GetRest();
+      pet.SetRest(rest + 10);
+    }
+
+    public static void ClearAll()
+    {
+      _pets.Clear();
     }
   }
 }

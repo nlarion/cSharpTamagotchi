@@ -13,8 +13,16 @@
     </ul>
     <a href="/">Add another たまごっち</a>
     <br>
-    <form action="/pets/@Model.GetId()" method="post">
+    <form action="/pets/@Model.GetId()/food" method="post">
       <button type="submit">Feed  @Model.GetName() tin cans</button>
+    </form>
+
+    <form action="/pets/@Model.GetId()/attention" method="post">
+      <button type="submit">Give  @Model.GetName() some attention</button>
+    </form>
+
+    <form action="/pets/@Model.GetId()/rest" method="post">
+      <button type="submit">Let  @Model.GetName() rest up</button>
     </form>
 
   </body>
